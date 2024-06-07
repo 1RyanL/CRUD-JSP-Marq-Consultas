@@ -1,0 +1,120 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Tempo de geração: 01/06/2024 às 21:59
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
+
+CREATE DATABASE IF NOT EXISTS hospital default character set utf8;
+use hospital;id
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `hospital`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabelaConsulta`
+--
+
+CREATE TABLE `tabelaConsulta` (
+  `idconsulta` int(6) NOT NULL,
+  `dataconsulta` char(12) NOT NULL,
+  `turnoconsulta` char(50) NOT NULL,
+  `especialidade` char(50) NOT NULL,
+  `idusuario` int(6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tabelaConsulta`
+--
+
+INSERT INTO `tabelaConsulta` (`idconsulta`, `dataconsulta`, `turnoconsulta`, `especialidade`, `idusuario`) VALUES
+(44, '2024-06-21', 'manha', 'Otorrinolaringologista', 12),
+(45, '2024-12-12', 'manha', 'Dermatologista', 13);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabelaUsuario`
+--
+
+CREATE TABLE `tabelaUsuario` (
+  `id` int(11) NOT NULL,
+  `nome` char(100) NOT NULL,
+  `datanasc` char(12) NOT NULL,
+  `peso` char(4) NOT NULL,
+  `email` char(100) NOT NULL,
+  `senha` char(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `tabelaUsuario`
+--
+
+INSERT INTO `tabelaUsuario` (`id`, `nome`, `datanasc`, `peso`, `email`, `senha`) VALUES
+(6, 'administrador', '1000-01-01', '100', 'a@gmail.com', '123456'),
+(12, 'Carlos Silva', '1990-09-19', '78', 'carlos@gmail.com', 'L3Xe!n@,');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `tabelaConsulta`
+--
+ALTER TABLE `tabelaConsulta`
+  ADD PRIMARY KEY (`idconsulta`),
+  ADD KEY `idusuario` (`idusuario`);
+
+--
+-- Índices de tabela `tabelaUsuario`
+--
+ALTER TABLE `tabelaUsuario`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tabelaConsulta`
+--
+ALTER TABLE `tabelaConsulta`
+  MODIFY `idconsulta` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT de tabela `tabelaUsuario`
+--
+ALTER TABLE `tabelaUsuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `tabelaConsulta`
+--
+ALTER TABLE `tabelaConsulta`
+  ADD CONSTRAINT `tabelaConsulta_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `tabelaUsuario` (`id`) ON DELETE SET NULL ON UPDATE SET NULL;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+select * from tabelaUsuario;
