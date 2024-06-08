@@ -1,6 +1,10 @@
-Este projeto foi feito no ApacheNetBeans 8.2.
-Para utilizá-lo em uma versão mais recente do NetBeans é necessário ajustar as importações bem como o servidor e o framework
-(versão do JDK).
+Este projeto foi feito no ApacheNetBeans 8.2 e trata-se de um sistema para marcação de consultas
+feito em JSP.
 
-É necessário criar o Banco de Dados, copiando o script do arquivo de texto HospSQL e colando no MySQL Workbench ou 
+Para utilizá-lo em uma versão mais recente do NetBeans é necessário ajustar as importações, 
+o servidor e o Java Platform (versão do JDK).
+
+Caso as incompatibilidades não sejam solucionadas, é necessário criar um novo projeto e colar os arquivos...
+
+É necessário, também, criar o Banco de Dados, copiando o script do arquivo de texto HospSQL e colando no MySQL Workbench ou 
 PhpMyAdmin.
