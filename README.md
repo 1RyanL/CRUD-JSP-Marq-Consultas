@@ -1,6 +1,10 @@
 Este projeto foi feito no ApacheNetBeans 8.2 e trata-se de um sistema para marcação de consultas
 feito em JSP.
 
+[Contribution guidelines for this project](Tela-Cadastro.png)
+[Contribution guidelines for this project](Tela-Login.png)
+[Contribution guidelines for this project](Tela-User-Comum.png)
+
 Para utilizá-lo em uma versão mais recente do NetBeans é necessário ajustar as importações, 
 o servidor e o Java Platform (versão do JDK).
 
@@ -8,3 +12,4 @@ Caso as incompatibilidades não sejam solucionadas, é necessário criar um novo
 
 É necessário, também, criar o Banco de Dados, copiando o script do arquivo de texto HospSQL e colando no MySQL Workbench ou 
 PhpMyAdmin.
+
